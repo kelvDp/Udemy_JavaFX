@@ -1,0 +1,38 @@
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+
+<?import javafx.scene.control.Label?>
+<!--a border pane wraps around other layout components, and can use it to space items inside it-->
+<!--top, bottom, left, right or center-->
+<BorderPane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml">
+
+    <top>
+        <Label text="This label is in the top position" BorderPane.alignment="CENTER"/>
+    </top>
+
+    <bottom>
+        <HBox alignment="BOTTOM_RIGHT" spacing="10">
+            <padding>
+                <Insets bottom="10" right="10"/>
+            </padding>
+            <Button text="Okay" prefWidth="90"/>
+            <Button text="Cancel" prefWidth="90"/>
+            <Button text="Help" prefWidth="90"/>
+        </HBox>
+    </bottom>
+
+    <left>
+        <Label text="This label is in the left position" alignment="CENTER"/>
+    </left>
+
+    <right>
+        <Label text="This label is in the right position" alignment="CENTER"/>
+    </right>
+
+    <center>
+        <Label text="This label will be in the center of the border pane"/>
+    </center>
+
+</BorderPane>

@@ -1,0 +1,30 @@
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+
+<!--A gridpane is a grid, so it has rows and columns-->
+<!--if you do not specify the positions of items in the gridpane, it will just add them all-->
+<!--on top of each other in the middle of the window-->
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.geometry.Insets?>
+<GridPane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml"
+          alignment="top_center" hgap="10" vgap="10">
+
+    <!--    add padding between top row and top banner-->
+    <padding>
+        <Insets top="10" />
+    </padding>
+    <!--    can specify constraints for colums, but have to do so before adding content to grid-->
+    <!--        order matters, the first one will apply to first column etc-->
+    <!--    <columnConstraints>-->
+    <!--        <ColumnConstraints percentWidth="50.0"/>-->
+    <!--        <ColumnConstraints percentWidth="50.0"/>-->
+    <!--    </columnConstraints>-->
+
+    <Button text="Button one" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+    <Button text="Button Two" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+    <Button text="Button Three" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <Button text="Really Long Button Four" GridPane.rowIndex="3" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
+    <Button text="Button Five" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+
+</GridPane>
