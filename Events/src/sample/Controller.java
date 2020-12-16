@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -52,6 +53,35 @@ public class Controller {
             helloBtn.setDisable(true);
             byeBtn.setDisable(true);
         }
+
+        // creating another thread to run outside of the ui thread
+        // note: you cannot update the ui in fx from a background thread
+        // only on the ui / main thread
+        // so have to use Platform.runLater() inside a bg thread if you want to update the ui
+        Runnable task = new Runnable() {
+
+            @Override
+            public void run() {
+                try {
+                    String s = Platform.isFxApplicationThread() ? "Ui Thread" : "Background Thread";
+                    System.out.println("Putting thread to sleep on the " + s);
+                    Thread.sleep(10000);
+                    Platform.runLater(new Runnable() { // have to add this for threads to work in fx
+                        @Override
+                        public void run() {
+                            String s = Platform.isFxApplicationThread() ? "Ui Thread" : "Background Thread";
+                            System.out.println("Updating thread on the " + s);
+                            ourLabel.setText("We did something!");
+                        }
+                    });
+                } catch (InterruptedException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        };
+
+        // this is how to run the thread in the method
+        new Thread(task).start();
     }
 
     // want to have a listener to see when a key is pressed, and if so, will enable the buttons

@@ -1,0 +1,8 @@
+Mail birthday card	Buy a 70th birthday card for Hazel	28-12-2020
+Doctor's appointment	Go for annual checkup at Clinic	21-12-2020
+Finish design proposal for client	Email mock-up of site to christel	14-01-2021
+Pickup Jane from airport	Jane arriving at OR around 17:00 at gate B.	04-03-2021
+Look for christmas gifts	Find a nice gift for Grant.	20-11-2020
+Created new item	This is the new todo item that will be added to the list	16-12-2020
+Make a test case	This is some text just to start filling up the space	17-12-2020
+today's item	this is today	15-12-2020
